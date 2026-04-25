@@ -6,6 +6,9 @@ on:
       - "claude/research-ai-app-ideas-qRVqf"
   workflow_dispatch:
 
+permissions:
+  contents: write
+
 jobs:
   build:
     name: Build release APK
