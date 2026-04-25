@@ -16,20 +16,41 @@ The functionality is just notes. The point is the feeling.
 You'll need the Flutter SDK (3.22+) and an Android device or emulator.
 
 ```bash
-# 1. Generate Android/iOS scaffolding (the lib/ source is already in this repo).
-#    This will NOT overwrite anything we already wrote.
-flutter create --project-name shanhai --org io.shanhai --platforms=android .
-
-# 2. Pull dependencies
+# 1. Pull dependencies
 flutter pub get
 
-# 3. Run on a connected device
+# 2. Run on a connected device
 flutter run -d <device-id>
 
-# 4. Build a release APK (per-architecture, slim)
+# 3. Build a release APK (per-architecture, slim)
 flutter build apk --release --split-per-abi
 # ➜ build/app/outputs/flutter-apk/app-arm64-v8a-release.apk  (~60–80 MB)
 ```
+
+## Get the APK without installing anything
+Pick whichever you have access to.
+
+**A. GitHub Actions (CI)** — pushes to this branch already trigger
+`.github/workflows/build-apk.yml`. APKs land at the rolling
+`shanhai-latest` pre-release. Requires Actions to be enabled on the account.
+
+**B. GitHub Codespaces** — open the repo in a Codespace; the
+`.devcontainer/` here boots with Flutter and the Android SDK ready, then
+run `./build.sh` and download the file from `build/app/outputs/flutter-apk/`.
+
+**C. Docker** — one command, on any machine:
+```bash
+docker run --rm -v "$PWD":/work -w /work ghcr.io/cirruslabs/flutter:3.41.7 \
+  bash -lc "flutter pub get && flutter build apk --release --split-per-abi"
+```
+Or, to pull the APKs straight out of the container into the current directory:
+```bash
+docker buildx build -f Dockerfile.build -o . .
+```
+
+**D. Local toolchain** — `./build.sh` on Linux/macOS/WSL with JDK 17+
+installed. Downloads Flutter and the Android SDK into `./.tools/` on
+first run.
 
 ## Project layout
 ```

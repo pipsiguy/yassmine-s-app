@@ -1,0 +1,21 @@
+# Build a release APK for 山海 (Shānhǎi) inside an isolated container,
+# then export it to the host with: docker buildx build -f Dockerfile.build -o . .
+#
+# Equivalent one-liner without buildx:
+#   docker run --rm -v "$PWD":/work -w /work ghcr.io/cirruslabs/flutter:3.41.7 \
+#     bash -lc "flutter pub get && flutter build apk --release --split-per-abi"
+#   ls build/app/outputs/flutter-apk/
+
+# 1. Build stage — Flutter + Android SDK preinstalled in this image.
+FROM ghcr.io/cirruslabs/flutter:3.41.7 AS build
+
+WORKDIR /work
+COPY pubspec.yaml pubspec.lock ./
+RUN flutter pub get
+
+COPY . .
+RUN flutter build apk --release --split-per-abi
+
+# 2. Export stage — only the APKs end up in the output.
+FROM scratch AS export
+COPY --from=build /work/build/app/outputs/flutter-apk/*.apk /
