@@ -26,7 +26,7 @@ class _CinnabarSealState extends State<CinnabarSeal>
       AnimationController(vsync: this, duration: Motion.med);
 
   Future<void> _press() async {
-    if (await Vibration.hasVibrator() ?? false) {
+    if (await Vibration.hasVibrator()) {
       Vibration.vibrate(duration: 18, amplitude: 130);
     }
     await _ctl.forward(from: 0);

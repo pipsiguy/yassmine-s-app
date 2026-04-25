@@ -63,7 +63,7 @@ class _RealmPageState extends State<RealmPage> {
 
   Future<void> _openNote(Note? note) async {
     setState(() => _focusedId = note?.id);
-    if (await Vibration.hasVibrator() ?? false) {
+    if (await Vibration.hasVibrator()) {
       Vibration.vibrate(duration: 8, amplitude: 80);
     }
     if (!mounted) return;
@@ -89,7 +89,7 @@ class _RealmPageState extends State<RealmPage> {
   }
 
   Future<void> _archive(Note n) async {
-    if (await Vibration.hasVibrator() ?? false) {
+    if (await Vibration.hasVibrator()) {
       Vibration.vibrate(pattern: [0, 12, 40, 18], intensities: [0, 70, 0, 90]);
     }
     await widget.repo.archive(n.id);

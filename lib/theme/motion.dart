@@ -1,5 +1,4 @@
 import 'package:flutter/animation.dart';
-import 'package:flutter/physics.dart';
 
 /// Motion presets named after classical aesthetic ideas:
 /// 收 (shōu) — gather; 放 (fàng) — release; 含蓄 (hánxù) — restrained.

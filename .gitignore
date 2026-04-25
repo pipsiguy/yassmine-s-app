@@ -28,6 +28,9 @@ android/app/upload-keystore.jks
 android/local.properties
 android/.gradle/
 android/captures/
+android/.kotlin/
+**/*.iml
+.metadata
 
 # iOS
 ios/Pods/

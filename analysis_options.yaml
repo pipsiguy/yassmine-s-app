@@ -3,6 +3,9 @@ include: package:flutter_lints/flutter.yaml
 analyzer:
   errors:
     invalid_annotation_target: ignore
+    deprecated_member_use: ignore   # withOpacity / .red etc. — Flutter 3.41 deprecated these in favor of withValues / .r
+    prefer_const_declarations: ignore
+    dead_null_aware_expression: ignore
 
 linter:
   rules:
