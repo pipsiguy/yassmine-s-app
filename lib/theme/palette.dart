@@ -52,11 +52,11 @@ class Palette {
 
 /// Five-element system. Used as note tags and to tint terrain.
 enum WuxingElement {
-  wood('木', '木'),
-  fire('火', '火'),
-  earth('土', '土'),
-  metal('金', '金'),
-  water('水', '水');
+  wood('木', 'wood'),
+  fire('火', 'fire'),
+  earth('土', 'earth'),
+  metal('金', 'metal'),
+  water('水', 'water');
 
   final String glyph;
   final String label;

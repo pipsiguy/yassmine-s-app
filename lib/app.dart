@@ -42,7 +42,7 @@ class _ShanhaiAppState extends State<ShanhaiApp> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: '山海',
+      title: 'Shanhai',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         scaffoldBackgroundColor: Palette.xuanZhi,

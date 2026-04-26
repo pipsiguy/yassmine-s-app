@@ -10,7 +10,7 @@ enum Guardian {
   crane('鹤', 'hè',
       'Crane circling the still pond — long life, quiet morning.'),
   changE('嫦娥', 'cháng\'é',
-      'Chang\'e on the moon, with 玉兔 the Jade Rabbit — for nights of memory.'),
+      'Chang\'e on the moon, with the Jade Rabbit — for nights of memory.'),
   fox('九尾狐', 'jiǔwěihú',
       'Nine-tailed fox in the bamboo grove — keeper of curiosities.'),
   qilin('麒麟', 'qílín',
@@ -30,16 +30,17 @@ enum Guardian {
 
 /// Eight cardinal moods. Mapped 1:1 to the primary guardian roster.
 enum Mood {
-  joyful('喜', Guardian.phoenix),
-  calm('静', Guardian.crane),
-  reflective('思', Guardian.changE),
-  powerful('威', Guardian.dragon),
-  curious('奇', Guardian.fox),
-  lucky('福', Guardian.qilin),
-  adventurous('勇', Guardian.monkey),
-  mysterious('幽', Guardian.snake);
+  joyful('喜', 'joyful', Guardian.phoenix),
+  calm('静', 'calm', Guardian.crane),
+  reflective('思', 'reflective', Guardian.changE),
+  powerful('威', 'powerful', Guardian.dragon),
+  curious('奇', 'curious', Guardian.fox),
+  lucky('福', 'lucky', Guardian.qilin),
+  adventurous('勇', 'bold', Guardian.monkey),
+  mysterious('幽', 'mystic', Guardian.snake);
 
   final String glyph;
+  final String label;
   final Guardian guardian;
-  const Mood(this.glyph, this.guardian);
+  const Mood(this.glyph, this.label, this.guardian);
 }

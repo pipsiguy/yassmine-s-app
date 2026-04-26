@@ -34,7 +34,7 @@ class BrushEditor extends StatelessWidget {
           textAlign: TextAlign.center,
           style: AppType.brush(size: 36, color: Palette.moHei, letter: 6),
           decoration: InputDecoration(
-            hintText: '题 · title',
+            hintText: 'Title',
             hintStyle: AppType.brush(
                 size: 32,
                 color: Palette.danMo.withOpacity(0.35),
@@ -58,7 +58,7 @@ class BrushEditor extends StatelessWidget {
             textAlignVertical: TextAlignVertical.top,
             style: AppType.serif(size: 18, color: Palette.moHei),
             decoration: InputDecoration(
-              hintText: '在此处落笔。\nWrite here, in any tongue.',
+              hintText: 'Write here.',
               hintStyle: AppType.serif(
                   size: 18, color: Palette.danMo.withOpacity(0.4)),
               border: InputBorder.none,
@@ -81,7 +81,7 @@ class BrushEditor extends StatelessWidget {
                       for (final m in Mood.values)
                         _Chip(
                           glyph: m.glyph,
-                          label: m.guardian.glyph,
+                          label: m.label,
                           selected: m == mood,
                           color: Palette.zhuSha,
                           onTap: () => onMoodChanged(m),
@@ -148,13 +148,29 @@ class _Chip extends StatelessWidget {
             width: 1,
           ),
         ),
-        child: Text(
-          glyph,
-          style: AppType.brush(
-            size: 22,
-            color: selected ? Palette.yueBai : color,
-            letter: 1,
-          ),
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            Text(
+              glyph,
+              style: AppType.brush(
+                size: 22,
+                color: selected ? Palette.yueBai : color,
+                letter: 1,
+              ),
+            ),
+            const SizedBox(height: 1),
+            Text(
+              label,
+              style: AppType.sans(
+                size: 9,
+                color: selected
+                    ? Palette.yueBai.withOpacity(0.9)
+                    : color.withOpacity(0.75),
+                letter: 0.4,
+              ),
+            ),
+          ],
         ),
       ),
     );
