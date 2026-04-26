@@ -10,7 +10,7 @@ enum Guardian {
   crane('鹤', 'hè',
       'Crane circling the still pond — long life, quiet morning.'),
   changE('嫦娥', 'cháng\'é',
-      'Chang\'e on the moon, with the Jade Rabbit — for nights of memory.'),
+      'Chang\'e on the moon, with 玉兔 the Jade Rabbit — for nights of memory.'),
   fox('九尾狐', 'jiǔwěihú',
       'Nine-tailed fox in the bamboo grove — keeper of curiosities.'),
   qilin('麒麟', 'qílín',

@@ -21,7 +21,7 @@ class DropPage extends StatefulWidget {
 
 class _DropPageState extends State<DropPage> {
   bool _bled = false;
-  final _name = TextEditingController(text: 'Lanruo');
+  final _name = TextEditingController(text: '兰若');
 
   @override
   void dispose() {
@@ -69,22 +69,28 @@ class _DropPageState extends State<DropPage> {
                       mainAxisSize: MainAxisSize.min,
                       children: [
                         Text(
-                          'Shanhai',
+                          '山海',
                           style: AppType.brush(
-                              size: 76, color: Palette.moHei, letter: 6),
+                              size: 86, color: Palette.moHei, letter: 12),
                         ).animate().fadeIn(duration: Motion.slow),
-                        const SizedBox(height: 6),
+                        const SizedBox(height: 8),
                         Text(
-                          'a notes app · mountains and seas',
+                          'Shanhai · a notes app of mountains and seas',
                           style: AppType.latin(
                               size: 13, color: Palette.danMo),
                         ),
                         const SizedBox(height: 56),
                         Text(
+                          '此境何名？',
+                          style: AppType.brush(
+                              size: 30, color: Palette.danMo, letter: 4),
+                        ),
+                        const SizedBox(height: 4),
+                        Text(
                           'What shall this realm be called?',
                           style: AppType.sans(
-                              size: 14,
-                              color: Palette.danMo.withOpacity(0.85)),
+                              size: 12,
+                              color: Palette.danMo.withOpacity(0.7)),
                         ),
                         const SizedBox(height: 24),
                         SizedBox(
@@ -119,7 +125,7 @@ class _DropPageState extends State<DropPage> {
                                 horizontal: 28, vertical: 14),
                           ),
                           child: Text(
-                            'Seal',
+                            '落印 · seal',
                             style: AppType.brush(
                                 size: 22, color: Palette.yueBai, letter: 4),
                           ),

@@ -172,10 +172,10 @@ class _RealmPageState extends State<RealmPage> {
     final n = widget.repo.all.length;
     final band = SkyBand.now(_now).band;
     final timeWord = switch (band) {
-      0 => 'dawn',
-      1 => 'day',
-      2 => 'dusk',
-      _ => 'night',
+      0 => '黎明 · dawn',
+      1 => '白昼 · day',
+      2 => '黄昏 · dusk',
+      _ => '夜 · night',
     };
     final noun = n == 1 ? 'note' : 'notes';
     return '$n $noun · $timeWord';

@@ -34,7 +34,7 @@ class BrushEditor extends StatelessWidget {
           textAlign: TextAlign.center,
           style: AppType.brush(size: 36, color: Palette.moHei, letter: 6),
           decoration: InputDecoration(
-            hintText: 'Title',
+            hintText: '题 · title',
             hintStyle: AppType.brush(
                 size: 32,
                 color: Palette.danMo.withOpacity(0.35),
@@ -58,7 +58,7 @@ class BrushEditor extends StatelessWidget {
             textAlignVertical: TextAlignVertical.top,
             style: AppType.serif(size: 18, color: Palette.moHei),
             decoration: InputDecoration(
-              hintText: 'Write here.',
+              hintText: '在此处落笔 · write here',
               hintStyle: AppType.serif(
                   size: 18, color: Palette.danMo.withOpacity(0.4)),
               border: InputBorder.none,

@@ -18,7 +18,7 @@ class NoteRepo extends ChangeNotifier {
   static const _uuid = Uuid();
 
   final List<Note> _notes = [];
-  String _realmName = 'Lanruo';
+  String _realmName = '兰若';
   bool _onboarded = false;
 
   List<Note> get all => List.unmodifiable(_notes.where((n) => !n.archived));
@@ -37,7 +37,7 @@ class NoteRepo extends ChangeNotifier {
       final f = await _path();
       if (!await f.exists()) return;
       final raw = jsonDecode(await f.readAsString()) as Map<String, dynamic>;
-      _realmName = raw['realm'] as String? ?? 'Lanruo';
+      _realmName = raw['realm'] as String? ?? '兰若';
       _onboarded = raw['onboarded'] as bool? ?? false;
       _notes
         ..clear()
@@ -61,7 +61,7 @@ class NoteRepo extends ChangeNotifier {
   }
 
   Future<void> setRealmName(String name) async {
-    _realmName = name.isEmpty ? 'Lanruo' : name;
+    _realmName = name.isEmpty ? '兰若' : name;
     _onboarded = true;
     await _save();
     notifyListeners();
