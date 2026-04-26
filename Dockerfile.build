@@ -10,10 +10,8 @@
 FROM ghcr.io/cirruslabs/flutter:3.41.7 AS build
 
 WORKDIR /work
-COPY pubspec.yaml pubspec.lock ./
-RUN flutter pub get
-
 COPY . .
+RUN flutter pub get
 RUN flutter build apk --release --split-per-abi
 
 # 2. Export stage — only the APKs end up in the output.
